@@ -51,15 +51,27 @@ class DrivableMap {
      */
 
     public boolean hasFasterThan(int speed){
+
+        /*
+        Collection<Drivable> values = this.drivable_map.values();
+        Object[] values_list = values.toArray();
+
+        for (int i = 0; i < values.size(); i++){
+            if (values_list[i >= speed
+        }
+
+         */
+
         Collection<String> id_list = this.drivable_map.keySet();
         Object[] ids = id_list.toArray();
 
         for (int i = 0; i < id_list.size(); i++){
-            if (speed >= (this.drivable_map.get(ids[i]).getMaxSpeed())){
+            if ((this.drivable_map.get(ids[i]).getMaxSpeed()) >= speed){
                 return true;
             }
         }
         return false;
+
     }
 
 
